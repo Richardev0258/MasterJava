@@ -1,15 +1,21 @@
 import javax.swing.*;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
-public class SistemasNumericos {
+public class SistemasNumericosConsole {
     public static void main(String[] args) {
         /*int numeroDecimal = 500;*/
 
-        String numeroStr = JOptionPane.showInputDialog(null, "Ingrese un número entero");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingrese un número entero");
+        //String numeroStr = scanner.nextLine(); Se reemplaza por la lectura directa del entero. line 14
+        /*String numeroStr = JOptionPane.showInputDialog(null, "Ingrese un número entero");*/
         int numeroDecimal = 0;
         try {
-            numeroDecimal = Integer.parseInt(numeroStr);
-        } catch (NumberFormatException e){
-            JOptionPane.showMessageDialog(null, "Error debe ingresar un número entero.");
+            numeroDecimal = scanner.nextInt();
+        } catch (Exception e){ /*Se pueden usar personalizadas (InputMismatchException) o genericas.*/
+            System.out.println("¡Error! debe ingresar un número entero.");
+            /*JOptionPane.showMessageDialog(null, "Error debe ingresar un número entero.");*/
             main(args);
             System.exit(0);
         };
@@ -24,20 +30,13 @@ public class SistemasNumericos {
 
         System.out.println("numeroDecimal = " + numeroDecimal);
 
-        System.out.println(textoBin + numeroDecimal + " = " + Integer.toBinaryString(numeroDecimal));
-        System.out.println("numeroBinario = " + numeroBin);
-
-        System.out.println(textoOct + numeroDecimal + " = " + Integer.toOctalString(numeroDecimal));
-        System.out.println("numeroOctal = " + numeroOct);
-
-        System.out.println(textoHex + numeroDecimal + " = " + Integer.toHexString(numeroDecimal));
-        System.out.println("numeroHex = " + numeroHex);
-
         String mensaje = textoBin + numeroDecimal + " = " + numeroBin;
         mensaje += "\n" + textoOct + numeroDecimal + " = " + numeroOct;
         mensaje += "\n" + textoHex + numeroDecimal + " = " + numeroHex;
 
-        JOptionPane.showMessageDialog(null, mensaje);
+        System.out.println(mensaje);
+
+        /*JOptionPane.showMessageDialog(null, mensaje);*/
 
     }
 }

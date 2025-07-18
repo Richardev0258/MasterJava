@@ -1,4 +1,4 @@
-public class Caracteres {
+public class PrimitivoCaracteres {
     public static void main(String[] args) {
 
         char caracter = '\u0040';

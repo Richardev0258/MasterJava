@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class DetalleDeFactura {
+public class DetalleDeFactura_Examen {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Ingrese la descripción de la factura.");

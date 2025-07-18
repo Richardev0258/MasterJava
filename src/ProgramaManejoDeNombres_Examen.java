@@ -1,4 +1,3 @@
-import java.sql.Array;
 import java.util.Scanner;
 
 public class ProgramaManejoDeNombres_Examen {
@@ -6,7 +5,6 @@ public class ProgramaManejoDeNombres_Examen {
         String nameConvert = "";
         int maxNumNom = 3;
         String[] nombres = new String[maxNumNom];
-        StringBuilder concatName = new StringBuilder();
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Ingrese un nombre");
@@ -23,7 +21,9 @@ public class ProgramaManejoDeNombres_Examen {
             }
             System.out.println(nameConvert);
         }catch (Exception e){
-
+            System.out.println("Error General.");
+            main(args);
+            System.exit(0);
         }
     }
 }
